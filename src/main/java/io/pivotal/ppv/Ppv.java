@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Ppv {
+class Ppv {
 
 	@Id
 	@GeneratedValue

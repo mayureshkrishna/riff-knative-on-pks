@@ -9,15 +9,13 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import io.pivotal.ppv.repository.PpvRepository;
-
 @Component
-public class Initializer implements ApplicationRunner {
+class Initializer implements ApplicationRunner {
 
 	private Log loggerInit = LogFactory.getLog(Initializer.class);
 	
 	@Autowired
-	private final PpvRepository ppvRepository;
+	private PpvRepository ppvRepository;
 
 	Initializer(PpvRepository ppvRepository) {
 		this.ppvRepository = ppvRepository;
@@ -35,5 +33,4 @@ public class Initializer implements ApplicationRunner {
 		//ppvRepository.findAll().forEach(System.out::println);
 
 	}
-
 }
