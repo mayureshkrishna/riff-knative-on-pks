@@ -2,7 +2,6 @@ package io.pivotal.ppv;
 
 import java.util.function.Function;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class PpvFunction implements Function<String, String> {
@@ -21,7 +20,7 @@ public class PpvFunction implements Function<String, String> {
 
 			ppvAsJSONString = objectMapper.writeValueAsString(ppv);
 
-		} catch (JsonProcessingException e) {
+		} catch (Exception e) {
 			ppvAsJSONString = e.getMessage().toString();
 		}
 		return ppvAsJSONString;
