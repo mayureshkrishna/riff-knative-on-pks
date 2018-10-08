@@ -1,9 +1,9 @@
 package io.pivotal.ppv;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
-@Repository
+@Component
 public interface PpvRepository extends JpaRepository<Ppv, Long> {
 
 }
