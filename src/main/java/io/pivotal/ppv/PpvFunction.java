@@ -1,9 +1,11 @@
 package io.pivotal.ppv;
 
+import java.util.Optional;
 import java.util.function.Function;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -12,12 +14,12 @@ public class PpvFunction implements Function<String, String> {
 
 	private Log logger = LogFactory.getLog(PpvFunction.class);
 	
-/*	@Autowired
-	private final PpvRepository ppvRepository;
+	@Autowired
+	private final io.pivotal.ppv.PpvRepository ppvRepository;
 	
-	PpvFunction(PpvRepository ppvRepository) {
+	PpvFunction(io.pivotal.ppv.PpvRepository ppvRepository) {
 		this.ppvRepository = ppvRepository;
-		}*/
+		}
 	
 	public String apply(String id) {
 		String ppvAsJsonString = null;
@@ -26,15 +28,10 @@ public class PpvFunction implements Function<String, String> {
 		
 		
 		
-	//	Optional<Ppv> ppv = ppvRepository.findById(longId);
+		Optional<Ppv> ppv = ppvRepository.findById(longId);
 		
-			Ppv ppv = new Ppv();
-			ppv.setId(1L);
-			ppv.setName("Khabib vs. McGregor");
-			ppv.setPrice("64.99");
-			ppv.setDateOfShowing("10/10/2018");
-			
-		/*if (ppv.isPresent())
+		
+		if (ppv.isPresent())
 		{	
 			 
 			ObjectMapper objectMapper = new ObjectMapper();
@@ -50,17 +47,7 @@ public class PpvFunction implements Function<String, String> {
 		{
 			ppvAsJsonString = "{\"msg\":\"No Data Found\"\"}";
 			logger.info("No Data Found");
-		}*/
-			
-			ObjectMapper objectMapper = new ObjectMapper();
-			
-			
-			
-			ppvAsJsonString = objectMapper.writeValueAsString(ppv);
-		
-			logger.info("Retrieved: "+ ppvAsJsonString);
-			
-			
+		}
 		} catch (JsonProcessingException jpe) {
 			ppvAsJsonString = jpe.getMessage().toString();
 			logger.error("PPV Info Failed: "+ppvAsJsonString);
