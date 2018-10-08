@@ -1,22 +1,11 @@
 package io.pivotal.ppv;
 
-import java.util.stream.Stream;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.ApplicationArguments;
-import org.springframework.boot.ApplicationRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.stereotype.Component;
-
-@SpringBootApplication
+//@SpringBootApplication
 public class PpvApplication {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		SpringApplication.run(PpvApplication.class, args);
-	}
+	}*/
 	
 	
 	/*
