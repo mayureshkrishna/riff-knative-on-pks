@@ -1,1 +1,1 @@
-handler = "io.pivotal.ppv.PpvFunction"
+handler = "io.pivotal.ppv.PpvApplication"
