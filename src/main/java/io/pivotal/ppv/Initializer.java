@@ -4,6 +4,7 @@ import java.util.stream.Stream;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
@@ -12,6 +13,8 @@ import org.springframework.stereotype.Component;
 public class Initializer implements ApplicationRunner {
 
 	private Log loggerInit = LogFactory.getLog(Initializer.class);
+	
+	@Autowired
 	private final PpvRepository ppvRepository;
 
 	Initializer(PpvRepository ppvRepository) {

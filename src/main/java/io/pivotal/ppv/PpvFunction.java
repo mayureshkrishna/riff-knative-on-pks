@@ -5,11 +5,13 @@ import java.util.function.Function;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class PpvFunction implements Function<String, String> {
 
 	private Log logger = LogFactory.getLog(PpvFunction.class);
 	
+	@Autowired
 	private final PpvRepository ppvRepository;
 	
 	PpvFunction(PpvRepository ppvRepository) {
