@@ -19,11 +19,14 @@ public class PpvFunction implements Function<String, String> {
 	
 	public String apply(String id) {
 		String ppvAsJsonString = null;
-		long longId = Long.parseLong(id);
+		
+		logger.info("Inside Apply - Input Id: "+id);
+		
+		
 		try {
 		
 		
-		
+		long longId = Long.parseLong(id);
 		Optional<Ppv> ppv = ppvRepository.findById(longId);
 		
 		
@@ -49,7 +52,7 @@ public class PpvFunction implements Function<String, String> {
 			logger.error("PPV Info Failed: "+ppvAsJsonString);
 		}
 		catch (Exception e) {
-			ppvAsJsonString = e.getMessage().toString();
+			ppvAsJsonString = e.getStackTrace().toString();
 			logger.error("PPV Info Failed: "+ppvAsJsonString);
 
 		}
