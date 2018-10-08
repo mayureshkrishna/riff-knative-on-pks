@@ -17,7 +17,6 @@ public class PpvFunction implements Function<String, String> {
 	@Autowired
 	private PpvRepository ppvRepository;
 	
-
 	public String apply(String id) {
 		String ppvAsJsonString = null;
 		long longId = Long.parseLong(id);
