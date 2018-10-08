@@ -9,18 +9,24 @@
 	<name>ppv</name>
 	<description>PPV Function</description>
 	<url>https://github.com/mayureshkrishna/riff-knative-on-pks.git</url>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.0.M3</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
-			<version>1.16.22</version>
+		<!--  	<version>1.16.22</version> -->
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.9.6</version>
+		<!--  	<version>2.9.6</version> -->
 		</dependency>
 	</dependencies>
 
