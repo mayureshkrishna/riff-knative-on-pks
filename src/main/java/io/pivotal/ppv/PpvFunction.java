@@ -1,6 +1,6 @@
 package io.pivotal.ppv;
 
-import java.util.List;
+import java.util.Collection;
 import java.util.function.Function;
 
 import org.apache.commons.logging.Log;
@@ -17,16 +17,16 @@ public class PpvFunction implements Function<String, String> {
 	@Autowired
 	private PpvRepository ppvRepository;
 
-	public String apply(String id) {
+	public String apply(String name) {
 		String ppvAsJsonString = null;
 
-		logger.info("Inside Apply - Input Id: " + id);
+		logger.info("Inside Apply - Input Name: " + name);
 
 		try {
 
 			// long longId = Long.parseLong(id);
 
-			List<Ppv> ppv = ppvRepository.findAll();
+			Collection<Ppv> ppv = ppvRepository.findByName(name);
 
 			logger.info("Find All Invoked");
 
