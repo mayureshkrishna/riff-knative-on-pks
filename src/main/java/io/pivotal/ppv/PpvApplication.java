@@ -19,7 +19,7 @@ public class PpvApplication {
 	}
 	
 	
-	
+	/*
 	//This initializer is just for adding dummy data
 	@Component
 	class Initializer implements ApplicationRunner {
@@ -44,6 +44,6 @@ public class PpvApplication {
 
 		}
 
-	}
+	}*/
 
 }
