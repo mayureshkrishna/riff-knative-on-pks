@@ -27,12 +27,14 @@ public class PpvFunction implements Function<String, String> {
 		
 		
 		long longId = Long.parseLong(id);
+		
 		Optional<Ppv> ppv = ppvRepository.findById(longId);
 		
+		logger.info("Find By Id Invoked");
 		
 		if (ppv.isPresent())
 		{	
-			 
+			logger.info("PPV Present for ID:"+ longId);
 			ObjectMapper objectMapper = new ObjectMapper();
 			
 			
@@ -48,11 +50,11 @@ public class PpvFunction implements Function<String, String> {
 			logger.info("No Data Found");
 		}
 		} catch (JsonProcessingException jpe) {
-			ppvAsJsonString = jpe.getMessage().toString();
+			ppvAsJsonString = jpe.getMessage();
 			logger.error("PPV Info Failed: "+ppvAsJsonString);
 		}
 		catch (Exception e) {
-			ppvAsJsonString = e.getStackTrace().toString();
+			ppvAsJsonString = e.getMessage();
 			logger.error("PPV Info Failed: "+ppvAsJsonString);
 
 		}
