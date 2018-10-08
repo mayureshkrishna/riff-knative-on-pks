@@ -17,10 +17,6 @@ class Initializer implements ApplicationRunner {
 	@Autowired
 	private PpvRepository ppvRepository;
 
-	Initializer(PpvRepository ppvRepository) {
-		this.ppvRepository = ppvRepository;
-	}
-
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		Stream.of("Khabib vs. McGregor", "Woodley vs. Till", "WWE: Evolution", "Soccer: Peru vs. Chile",

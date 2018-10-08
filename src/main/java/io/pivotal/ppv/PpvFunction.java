@@ -15,12 +15,9 @@ public class PpvFunction implements Function<String, String> {
 	private Log logger = LogFactory.getLog(PpvFunction.class);
 	
 	@Autowired
-	private final io.pivotal.ppv.PpvRepository ppvRepository;
+	private PpvRepository ppvRepository;
 	
-	PpvFunction(io.pivotal.ppv.PpvRepository ppvRepository) {
-		this.ppvRepository = ppvRepository;
-		}
-	
+
 	public String apply(String id) {
 		String ppvAsJsonString = null;
 		long longId = Long.parseLong(id);
