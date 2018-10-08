@@ -11,9 +11,11 @@ public class PpvFunction implements Function<String, String> {
 			ppv.setPrice("65.00");
 			ppv.setDateOfShowing("10/10/2018");
 			
-			String ppvAsString = ppv.toString();
-
-				return ppvAsString;
+			String ppvAsJsonString = "{\"id\":\"" + ppv.getId() + "\"," +
+									 "{\"name\":\"" + ppv.getName() + "\"," +
+									 "{\"price\":\"" + ppv.getPrice() + "\"," +
+									 "{\"dateOfShowing\":\"" + ppv.getDateOfShowing() + "\"}";
+				return ppvAsJsonString;
 	}
 
 }
