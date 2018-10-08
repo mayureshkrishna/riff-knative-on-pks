@@ -24,7 +24,7 @@ public class PpvFunction implements Function<Long, Collection<Ppv>> {
 	
 	private static Log logger = LogFactory.getLog(PpvFunction.class);
 
-	@Autowired
+	
 	private PpvRepository ppvRepo;
 
 	public Collection<Ppv> apply(Long id) {
@@ -36,7 +36,7 @@ public class PpvFunction implements Function<Long, Collection<Ppv>> {
 }
 
 
-@Component
+/*@Component
 class Initializer implements ApplicationRunner {
 	
 	private static Log logger = LogFactory.getLog(Initializer.class);
@@ -56,7 +56,7 @@ class Initializer implements ApplicationRunner {
 		ppvRepository.findAll().forEach(ppv -> logger.info("Ppv Info: "+ppv.getName()+" ,"+ppv.getPrice()+" ,"+ppv.getDateOfShowing()));
 	}
 	
-}
+}*/
 
 
 interface PpvRepository extends JpaRepository<Ppv, Long> {
