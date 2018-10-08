@@ -4,12 +4,10 @@ import java.util.function.Function;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-@Component
 public class PpvFunction implements Function<String, String> {
 
 	private Log logger = LogFactory.getLog(PpvFunction.class);
