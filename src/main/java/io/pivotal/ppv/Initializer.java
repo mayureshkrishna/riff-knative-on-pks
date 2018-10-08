@@ -9,6 +9,8 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import io.pivotal.ppv.repository.PpvRepository;
+
 @Component
 public class Initializer implements ApplicationRunner {
 
@@ -30,7 +32,7 @@ public class Initializer implements ApplicationRunner {
 		ppvRepository.findAll().forEach(ppv -> loggerInit
 				.info("Ppv Info: " + ppv.getName() + " ," + ppv.getPrice() + " ," + ppv.getDateOfShowing()));
 		
-	//	ppvRepository.findAll().forEach(System.out::println);
+		//ppvRepository.findAll().forEach(System.out::println);
 
 	}
 
