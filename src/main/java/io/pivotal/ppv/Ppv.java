@@ -16,7 +16,7 @@ public class Ppv {
 
 	@Id
 	@GeneratedValue
-	private String id;
+	private Long id;
 	private String name;
 	private String price;
 	private String dateOfShowing;
