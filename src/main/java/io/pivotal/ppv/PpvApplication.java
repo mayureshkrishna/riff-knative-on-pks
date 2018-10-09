@@ -1,10 +1,7 @@
 package io.pivotal.ppv;
 
-import java.util.List;
 import java.util.Optional;
-import java.util.function.Consumer;
 import java.util.function.Function;
-import java.util.function.Supplier;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -21,35 +18,6 @@ public class PpvApplication {
 	@Autowired
 	private PpvRepository ppvRepository;
 
-	@Bean
-	public Function<String, List<PayPerView>> getpayperviewbyname() {
-
-		return name -> {
-
-			try {
-				List<PayPerView> ppv = ppvRepository.findByName(name);
-				logger.info("Number of records: " + ppv.size());
-
-				if (ppv.isEmpty()) {
-					logger.info("No Data Found");
-					return null;
-
-				} else {
-
-					logger.info("Retrieved: " + ppv.toString());
-					return ppv;
-					
-				}
-			} 
-			
-			catch (Exception e) {
-				logger.error("PPV Info Failed: " + e.getMessage());
-				return null;
-
-			}
-		};
-	}
-	
 	@Bean
 	public Function <Long,PayPerView> getpayperviewbyid() {
 
@@ -72,56 +40,6 @@ public class PpvApplication {
 		};
 	}
 	
-	@Bean
-	public Supplier <List<PayPerView>> getpayperview() {
-		
-		return() -> {
-		try {
-			List<PayPerView> ppv = ppvRepository.findAll();
-			logger.info("Number of records: " + ppv.size());
-
-			if (ppv.isEmpty()) {
-				logger.info("No Data Found");
-				return null;
-
-			} else {
-
-				logger.info("Retrieved: " + ppv.toString());
-				return ppv;
-				
-			}
-		} 
-		
-		catch (Exception e) {
-			logger.error("PPV Info Failed: " + e.getMessage());
-			return null;
-
-		}
-		};
-	}
-	
-	@Bean
-	public Consumer <PayPerView> savepayperview() {
-		
-		return ppv ->
-		{
-		try {
-			if (ppv == null) {
-				logger.info("No Data Provided");
-
-			} else {
-				
-				ppvRepository.save(ppv);
-				logger.info("Saved: " + ppv.toString());
-			}
-		} 
-		
-		catch (Exception e) {
-			logger.error("PPV Info Failed: " + e.getMessage());
-		}
-		};
-	}
-
 	public static void main(String[] args) {
 		SpringApplication.run(PpvApplication.class, args);
 	}
