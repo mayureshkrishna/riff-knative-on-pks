@@ -1,4 +1,4 @@
-# Knative on Pivotal Container Service using Riff
+# Knative on Pivotal Container Service using riff
 
 ## Before you begin
 
