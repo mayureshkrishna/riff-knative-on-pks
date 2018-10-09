@@ -51,19 +51,19 @@ kubectl create -f https://raw.githubusercontent.com/mayureshkrishna/riff-knative
 The riff CLI is available to download from our GitHub releases page. Once installed, check that the riff CLI version is 0.1.3 or later.
 
 ```bash
-	riff version
+riff version
 ```
 
 At this point it is useful to monitor your cluster using a utility like watch. To install on a Mac
 
 ```bash
-	brew install watch
+brew install watch
 ```
 
 Watch pods in a separate terminal.
 
 ```bash
-	watch -n 1 kubectl get pod --all-namespaces
+watch -n 1 kubectl get pod --all-namespaces
 ```
 
 
@@ -72,7 +72,7 @@ Watch pods in a separate terminal.
 Install Knative, watching the pods until everything is running (this could take a couple of minutes). The --node-port option replaces LoadBalancer type services with NodePort.
 
 ```bash
-	riff system install --node-port
+riff system install --node-port
 ```
 
 You should see pods running in namespaces istio-system, knative-build, knative-serving, and knative-eventing as well as kube-system when the system is fully operational.
@@ -147,7 +147,6 @@ The 4 “Init” containers may take a while to complete the first time a functi
 
 
 ```
-
 NAMESPACE   NAME                                    READY     STATUS      RESTARTS   AGE
 default     ppv-00001-deployment-679bffb58c-cpzz8   3/3       Running     0          4m
 default     ppv-00001-jk9vj                         0/1       Completed   0          5m
