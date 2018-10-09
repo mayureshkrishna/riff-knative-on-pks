@@ -23,21 +23,21 @@ commands will need to be adjusted for use in a Windows environment.
 
 To install Pivotal Container Service (PKS), follow the documentation at https://docs.pivotal.io/runtimes/pks/1-2/installing-pks.html.
 
-## Creating a Kubernetes cluster
+### Creating a Kubernetes cluster
 
 To create a cluster, follow the documentation at https://docs.pivotal.io/runtimes/pks/1-2/create-cluster.html
 
-## Access the cluster
+### Access the cluster
 
 To retrieve your cluster credentials, follow the documentation at https://docs.pivotal.io/runtimes/pks/1-2/cluster-credentials.html.
 
-## Confirm that your kubectl context is pointing to the new cluster
+### Confirm that your kubectl context is pointing to the new cluster
 
 ```bash
 kubectl config current-context
 ```
 
-## Create Storage Class Spec for your Cluster on vSphere
+### Create Storage Class Spec for your Cluster on vSphere
 
 You need to use cluster admin context for Storage class and Knative & Serverless riff system installation steps.
 
@@ -67,7 +67,7 @@ watch -n 1 kubectl get pod --all-namespaces
 ```
 
 
-### Install Knative and Serverless riff system
+## Install Knative and Serverless riff system
 
 Install Knative, watching the pods until everything is running (this could take a couple of minutes). The --node-port option replaces LoadBalancer type services with NodePort.
 
@@ -111,7 +111,7 @@ kube-system        kubernetes-dashboard-5498ccf677-bpz7s        1/1       Runnin
 kube-system        storage-provisioner                          1/1       Running     0          13m
 ```
 
-## Initialize the namespace and provide credentials for pushing images to DockerHub
+### Initialize the namespace and provide credentials for pushing images to DockerHub
 
 Use the riff CLI to initialize your namespace (if you plan on using a namespace other than default then substitute the name you want to use). This will create a serviceaccount and a secret with the provided credentials and install a buildtemplate. Replace the ??? with your docker username.
 
