@@ -15,11 +15,20 @@ public class PpvFunction implements Function<String, String> {
 	private Log logger = LogFactory.getLog(PpvFunction.class);
 
 	@Autowired
-	private PpvRepository ppvRepository;
+	private final PpvRepository ppvRepository;
+
+
+	public PpvFunction(PpvRepository ppvRepository) {
+		super();
+		this.ppvRepository = ppvRepository;
+	}
+
 
 	public String apply(String name) {
+		
+				
 		String ppvAsJsonString = null;
-
+		
 		logger.info("Inside Apply - Input Name: " + name);
 
 		try {

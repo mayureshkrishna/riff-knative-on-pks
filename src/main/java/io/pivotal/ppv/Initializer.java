@@ -26,5 +26,9 @@ class Initializer implements ApplicationRunner {
 		
 		ppvRepository.findAll().forEach(ppv -> loggerInit
 				.info("Ppv Info: " + ppv.getId() + ", " + ppv.getName() + " ," + ppv.getPrice() + " ," + ppv.getDateOfShowing()));
+		
+	/*	PpvFunction ppvfn = new PpvFunction(ppvRepository);
+		String result = ppvfn.apply("UFC-1");
+		System.out.println(result);*/
 	}
 }
