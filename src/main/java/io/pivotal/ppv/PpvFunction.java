@@ -24,21 +24,21 @@ public class PpvFunction implements Function<String, String> {
 
 		try {
 
-			// long longId = Long.parseLong(id);
-
 			Collection<Ppv> ppv = ppvRepository.findByName(name);
 
 			logger.info("Find All Invoked");
+			
+			logger.info("Number of records: " + ppv.size());
 
-			if (!ppv.isEmpty()) {
-				ObjectMapper objectMapper = new ObjectMapper();
-
-				ppvAsJsonString = objectMapper.writeValueAsString(ppv);
-
-				logger.info("Retrieved: " + ppvAsJsonString);
-			} else {
+			if (ppv.isEmpty()) {
 				ppvAsJsonString = "{\"msg\":\"No Data Found\"\"}";
 				logger.info("No Data Found");
+
+			} else {
+
+				ObjectMapper objectMapper = new ObjectMapper();
+				ppvAsJsonString = objectMapper.writeValueAsString(ppv);
+				logger.info("Retrieved: " + ppvAsJsonString);
 			}
 		} catch (JsonProcessingException jpe) {
 			ppvAsJsonString = jpe.getMessage();
