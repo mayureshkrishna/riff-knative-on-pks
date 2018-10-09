@@ -19,7 +19,6 @@ public class PpvFunction implements Function<String, String> {
 
 
 	public PpvFunction(PpvRepository ppvRepository) {
-		super();
 		this.ppvRepository = ppvRepository;
 	}
 
