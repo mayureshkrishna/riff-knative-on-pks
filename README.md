@@ -4,9 +4,9 @@
 
 This guide walks you through creating a cluster with the correct specifications for Knative on Pivotal Container Service deployed on prem on vSphere.
 
-If you would like to explore Serverless on GKE, you can follow the guide on Project Riff website here: https://projectriff.io/docs/getting-started-with-knative-riff-on-gke/
+If you would like to explore Serverless on GKE, you can follow the guide on Project riff website here: https://projectriff.io/docs/getting-started-with-knative-riff-on-gke/
 
-If you would like to try out locally on Minikube, you can follow the guide on Project Riff website here: https://projectriff.io/docs/getting-started-with-knative-riff-on-minikube/ 
+If you would like to try out locally on Minikube, you can follow the guide on Project riff website here: https://projectriff.io/docs/getting-started-with-knative-riff-on-minikube/ 
 
 This guide assumes you are using bash in a Mac or Linux environment; some commands will need to be adjusted for use in a Windows environment. This guide also assumes that you have Kubernetes CLI installed.
 
