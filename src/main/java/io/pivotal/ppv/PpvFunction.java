@@ -1,6 +1,6 @@
 package io.pivotal.ppv;
 
-import java.util.Collection;
+import java.util.List;
 import java.util.function.Function;
 
 import org.apache.commons.logging.Log;
@@ -24,7 +24,7 @@ public class PpvFunction implements Function<String, String> {
 
 		try {
 
-			Collection<Ppv> ppv = ppvRepository.findByName(name);
+			List<Ppv> ppv = ppvRepository.findByName(name);
 
 			logger.info("Find All Invoked");
 			
